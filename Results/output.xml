@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.10 on darwin)" generated="20230504 16:44:51.110" rpa="false" schemaversion="3">
+<suite id="s1" name="MereUi" source="/Users/Mariia_Domnina/ALERT/MereRobotFramework/tests/MereUi.robot">
+<test id="s1-t1" name="Open Sign In Page" line="25">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230504 16:44:51.280" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230504 16:44:51.279" endtime="20230504 16:44:53.073"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:51.279" endtime="20230504 16:44:53.074"/>
+</kw>
+<kw name="Open Sign In Page" library="MereApp">
+<kw name="Navigate To" library="SignIn">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230504 16:44:53.076" level="INFO">Opening url 'https://builder.mereplatform.com/sign-in'</msg>
+<status status="PASS" starttime="20230504 16:44:53.076" endtime="20230504 16:44:54.943"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:53.075" endtime="20230504 16:44:54.944"/>
+</kw>
+<kw name="Verify Page Loaded" library="SignIn">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:44:54.944" endtime="20230504 16:44:55.371"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:54.944" endtime="20230504 16:44:55.371"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:53.074" endtime="20230504 16:44:55.371"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230504 16:44:55.372" endtime="20230504 16:44:55.458"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:55.372" endtime="20230504 16:44:55.458"/>
+</kw>
+<tag>SignIn</tag>
+<tag>Smoke</tag>
+<status status="PASS" starttime="20230504 16:44:51.279" endtime="20230504 16:44:55.458"/>
+</test>
+<test id="s1-t2" name="Log In With Valid Credentials" line="29">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230504 16:44:55.460" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230504 16:44:55.459" endtime="20230504 16:44:57.122"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:55.459" endtime="20230504 16:44:57.122"/>
+</kw>
+<kw name="Open Sign In Page" library="MereApp">
+<kw name="Navigate To" library="SignIn">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230504 16:44:57.124" level="INFO">Opening url 'https://builder.mereplatform.com/sign-in'</msg>
+<status status="PASS" starttime="20230504 16:44:57.123" endtime="20230504 16:44:58.921"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:57.123" endtime="20230504 16:44:58.921"/>
+</kw>
+<kw name="Verify Page Loaded" library="SignIn">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:44:58.921" endtime="20230504 16:44:59.142"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:58.921" endtime="20230504 16:44:59.142"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:57.122" endtime="20230504 16:44:59.142"/>
+</kw>
+<kw name="Log In With Valid Credentials" library="MereApp">
+<arg>${EMAIL}[0]</arg>
+<arg>${PASSWORD}[0]</arg>
+<kw name="Enter Email And Proceed" library="SignIn">
+<arg>${Email}</arg>
+<kw name="Fill &quot;Email&quot; Field" library="SignIn">
+<arg>${Email}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230504 16:44:59.144" level="INFO">Typing text 'greenrabbittest@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20230504 16:44:59.144" endtime="20230504 16:44:59.349"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:59.143" endtime="20230504 16:44:59.349"/>
+</kw>
+<kw name="Verify &quot;Proceed&quot; Button Is Enabled" library="SignIn">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${PROCEED_BUTTON}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230504 16:44:59.350" endtime="20230504 16:44:59.375"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:59.349" endtime="20230504 16:44:59.375"/>
+</kw>
+<kw name="Click &quot;Proceed&quot; Button" library="SignIn">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${PROCEED_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230504 16:44:59.376" level="INFO">Clicking button '//button[@type='button' and contains(text(),'Далее')]'.</msg>
+<status status="PASS" starttime="20230504 16:44:59.376" endtime="20230504 16:44:59.449"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:59.376" endtime="20230504 16:44:59.449"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:59.143" endtime="20230504 16:44:59.449"/>
+</kw>
+<kw name="Verify Page Loaded" library="Password">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${PASWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:44:59.450" endtime="20230504 16:44:59.459"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:59.449" endtime="20230504 16:44:59.459"/>
+</kw>
+<kw name="Enter Password And Proceed" library="Password">
+<arg>${Password}</arg>
+<kw name="Verify Page Loaded" library="Password">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${PASWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:44:59.460" endtime="20230504 16:44:59.468"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:59.460" endtime="20230504 16:44:59.468"/>
+</kw>
+<kw name="Fill &quot;Password&quot; Field" library="Password">
+<arg>${Password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASWORD_FIELD}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230504 16:44:59.470" level="INFO">Typing text '1356TestPass!' into text field 'password'.</msg>
+<status status="PASS" starttime="20230504 16:44:59.469" endtime="20230504 16:44:59.549"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:59.468" endtime="20230504 16:44:59.549"/>
+</kw>
+<kw name="Verify &quot;Submit&quot; Button Is Enabled" library="Password">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230504 16:44:59.550" endtime="20230504 16:44:59.581"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:59.549" endtime="20230504 16:44:59.581"/>
+</kw>
+<kw name="Click &quot;Submit&quot; Button" library="Password">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230504 16:44:59.582" level="INFO">Clicking button '//button[@type='submit' and contains(text(),'Далее')]'.</msg>
+<status status="PASS" starttime="20230504 16:44:59.582" endtime="20230504 16:44:59.632"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:59.582" endtime="20230504 16:44:59.632"/>
+</kw>
+<status status="PASS" starttime="20230504 16:44:59.459" endtime="20230504 16:44:59.632"/>
+</kw>
+<kw name="Verify Page Loaded" library="Home">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${PROFILE_ICON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<msg timestamp="20230504 16:45:05.094" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230504 16:45:05.094" level="FAIL">Element '//div[contains(@class,'iconProfile')]' did not appear in 5 seconds.</msg>
+<status status="FAIL" starttime="20230504 16:44:59.632" endtime="20230504 16:45:05.097"/>
+</kw>
+<status status="FAIL" starttime="20230504 16:44:59.632" endtime="20230504 16:45:05.097"/>
+</kw>
+<status status="FAIL" starttime="20230504 16:44:59.143" endtime="20230504 16:45:05.097"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230504 16:45:05.098" endtime="20230504 16:45:05.178"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:05.097" endtime="20230504 16:45:05.178"/>
+</kw>
+<tag>SignIn</tag>
+<tag>Smoke</tag>
+<status status="FAIL" starttime="20230504 16:44:55.459" endtime="20230504 16:45:05.178">Element '//div[contains(@class,'iconProfile')]' did not appear in 5 seconds.</status>
+</test>
+<test id="s1-t3" name="Log In With Invalid Email" line="34">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230504 16:45:05.180" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230504 16:45:05.180" endtime="20230504 16:45:06.854"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:05.179" endtime="20230504 16:45:06.854"/>
+</kw>
+<kw name="Open Sign In Page" library="MereApp">
+<kw name="Navigate To" library="SignIn">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230504 16:45:06.856" level="INFO">Opening url 'https://builder.mereplatform.com/sign-in'</msg>
+<status status="PASS" starttime="20230504 16:45:06.855" endtime="20230504 16:45:08.658"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:06.855" endtime="20230504 16:45:08.659"/>
+</kw>
+<kw name="Verify Page Loaded" library="SignIn">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:45:08.659" endtime="20230504 16:45:09.093"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:08.659" endtime="20230504 16:45:09.093"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:06.855" endtime="20230504 16:45:09.093"/>
+</kw>
+<kw name="Log In With Invalid Credentials" library="MereApp">
+<arg>${EMAIL}[1]</arg>
+<arg>${PASSWORD}[0]</arg>
+<kw name="Enter Email And Proceed" library="SignIn">
+<arg>${Email}</arg>
+<kw name="Fill &quot;Email&quot; Field" library="SignIn">
+<arg>${Email}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:09.095" level="INFO">Typing text 'invalid@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20230504 16:45:09.094" endtime="20230504 16:45:09.258"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:09.094" endtime="20230504 16:45:09.258"/>
+</kw>
+<kw name="Verify &quot;Proceed&quot; Button Is Enabled" library="SignIn">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${PROCEED_BUTTON}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230504 16:45:09.259" endtime="20230504 16:45:09.289"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:09.258" endtime="20230504 16:45:09.289"/>
+</kw>
+<kw name="Click &quot;Proceed&quot; Button" library="SignIn">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${PROCEED_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:09.290" level="INFO">Clicking button '//button[@type='button' and contains(text(),'Далее')]'.</msg>
+<status status="PASS" starttime="20230504 16:45:09.289" endtime="20230504 16:45:09.365"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:09.289" endtime="20230504 16:45:09.365"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:09.094" endtime="20230504 16:45:09.365"/>
+</kw>
+<kw name="Verify Page Loaded" library="Password">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${PASWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:45:09.366" endtime="20230504 16:45:09.373"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:09.365" endtime="20230504 16:45:09.373"/>
+</kw>
+<kw name="Enter Password And Proceed" library="Password">
+<arg>${Password}</arg>
+<kw name="Verify Page Loaded" library="Password">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${PASWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:45:09.374" endtime="20230504 16:45:09.379"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:09.374" endtime="20230504 16:45:09.379"/>
+</kw>
+<kw name="Fill &quot;Password&quot; Field" library="Password">
+<arg>${Password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASWORD_FIELD}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:09.380" level="INFO">Typing text '1356TestPass!' into text field 'password'.</msg>
+<status status="PASS" starttime="20230504 16:45:09.380" endtime="20230504 16:45:09.444"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:09.379" endtime="20230504 16:45:09.444"/>
+</kw>
+<kw name="Verify &quot;Submit&quot; Button Is Enabled" library="Password">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230504 16:45:09.445" endtime="20230504 16:45:09.464"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:09.444" endtime="20230504 16:45:09.464"/>
+</kw>
+<kw name="Click &quot;Submit&quot; Button" library="Password">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:09.465" level="INFO">Clicking button '//button[@type='submit' and contains(text(),'Далее')]'.</msg>
+<status status="PASS" starttime="20230504 16:45:09.464" endtime="20230504 16:45:09.507"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:09.464" endtime="20230504 16:45:09.508"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:09.373" endtime="20230504 16:45:09.508"/>
+</kw>
+<kw name="Verify Login Error Message Displayed" library="Password">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${INVALID_CREDENTIALS_MESSAGE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230504 16:45:09.779" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230504 16:45:09.779" level="FAIL">Page should have contained text 'No active account found with the given credentials' but did not.</msg>
+<status status="FAIL" starttime="20230504 16:45:09.508" endtime="20230504 16:45:09.781"/>
+</kw>
+<status status="FAIL" starttime="20230504 16:45:09.508" endtime="20230504 16:45:09.781"/>
+</kw>
+<status status="FAIL" starttime="20230504 16:45:09.093" endtime="20230504 16:45:09.781"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230504 16:45:09.782" endtime="20230504 16:45:09.864"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:09.782" endtime="20230504 16:45:09.864"/>
+</kw>
+<tag>Negative</tag>
+<tag>SignIn</tag>
+<status status="FAIL" starttime="20230504 16:45:05.179" endtime="20230504 16:45:09.864">Page should have contained text 'No active account found with the given credentials' but did not.</status>
+</test>
+<test id="s1-t4" name="Log In With Invalid Password" line="39">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230504 16:45:09.867" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230504 16:45:09.866" endtime="20230504 16:45:11.530"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:09.865" endtime="20230504 16:45:11.530"/>
+</kw>
+<kw name="Open Sign In Page" library="MereApp">
+<kw name="Navigate To" library="SignIn">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230504 16:45:11.532" level="INFO">Opening url 'https://builder.mereplatform.com/sign-in'</msg>
+<status status="PASS" starttime="20230504 16:45:11.531" endtime="20230504 16:45:13.179"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:11.531" endtime="20230504 16:45:13.179"/>
+</kw>
+<kw name="Verify Page Loaded" library="SignIn">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:45:13.180" endtime="20230504 16:45:13.399"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:13.179" endtime="20230504 16:45:13.400"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:11.531" endtime="20230504 16:45:13.400"/>
+</kw>
+<kw name="Log In With Invalid Credentials" library="MereApp">
+<arg>${EMAIL}[0]</arg>
+<arg>${PASSWORD}[1]</arg>
+<kw name="Enter Email And Proceed" library="SignIn">
+<arg>${Email}</arg>
+<kw name="Fill &quot;Email&quot; Field" library="SignIn">
+<arg>${Email}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:13.401" level="INFO">Typing text 'greenrabbittest@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20230504 16:45:13.401" endtime="20230504 16:45:13.574"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:13.401" endtime="20230504 16:45:13.575"/>
+</kw>
+<kw name="Verify &quot;Proceed&quot; Button Is Enabled" library="SignIn">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${PROCEED_BUTTON}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230504 16:45:13.575" endtime="20230504 16:45:13.602"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:13.575" endtime="20230504 16:45:13.602"/>
+</kw>
+<kw name="Click &quot;Proceed&quot; Button" library="SignIn">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${PROCEED_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:13.603" level="INFO">Clicking button '//button[@type='button' and contains(text(),'Далее')]'.</msg>
+<status status="PASS" starttime="20230504 16:45:13.602" endtime="20230504 16:45:13.672"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:13.602" endtime="20230504 16:45:13.672"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:13.400" endtime="20230504 16:45:13.672"/>
+</kw>
+<kw name="Verify Page Loaded" library="Password">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${PASWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:45:13.673" endtime="20230504 16:45:13.688"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:13.672" endtime="20230504 16:45:13.688"/>
+</kw>
+<kw name="Enter Password And Proceed" library="Password">
+<arg>${Password}</arg>
+<kw name="Verify Page Loaded" library="Password">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${PASWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:45:13.689" endtime="20230504 16:45:13.696"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:13.689" endtime="20230504 16:45:13.696"/>
+</kw>
+<kw name="Fill &quot;Password&quot; Field" library="Password">
+<arg>${Password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASWORD_FIELD}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:13.697" level="INFO">Typing text 'invalidpassword' into text field 'password'.</msg>
+<status status="PASS" starttime="20230504 16:45:13.697" endtime="20230504 16:45:13.766"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:13.697" endtime="20230504 16:45:13.766"/>
+</kw>
+<kw name="Verify &quot;Submit&quot; Button Is Enabled" library="Password">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230504 16:45:13.767" endtime="20230504 16:45:13.792"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:13.766" endtime="20230504 16:45:13.792"/>
+</kw>
+<kw name="Click &quot;Submit&quot; Button" library="Password">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:13.793" level="INFO">Clicking button '//button[@type='submit' and contains(text(),'Далее')]'.</msg>
+<status status="PASS" starttime="20230504 16:45:13.792" endtime="20230504 16:45:13.838"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:13.792" endtime="20230504 16:45:13.838"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:13.689" endtime="20230504 16:45:13.838"/>
+</kw>
+<kw name="Verify Login Error Message Displayed" library="Password">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${INVALID_CREDENTIALS_MESSAGE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230504 16:45:14.102" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230504 16:45:14.102" level="FAIL">Page should have contained text 'No active account found with the given credentials' but did not.</msg>
+<status status="FAIL" starttime="20230504 16:45:13.838" endtime="20230504 16:45:14.103"/>
+</kw>
+<status status="FAIL" starttime="20230504 16:45:13.838" endtime="20230504 16:45:14.103"/>
+</kw>
+<status status="FAIL" starttime="20230504 16:45:13.400" endtime="20230504 16:45:14.103"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230504 16:45:14.103" endtime="20230504 16:45:14.184"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:14.103" endtime="20230504 16:45:14.184"/>
+</kw>
+<tag>Negative</tag>
+<tag>SignIn</tag>
+<status status="FAIL" starttime="20230504 16:45:09.865" endtime="20230504 16:45:14.184">Page should have contained text 'No active account found with the given credentials' but did not.</status>
+</test>
+<test id="s1-t5" name="Log In With Invalid Email And Password" line="44">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230504 16:45:14.186" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230504 16:45:14.185" endtime="20230504 16:45:15.855"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:14.185" endtime="20230504 16:45:15.855"/>
+</kw>
+<kw name="Open Sign In Page" library="MereApp">
+<kw name="Navigate To" library="SignIn">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230504 16:45:15.857" level="INFO">Opening url 'https://builder.mereplatform.com/sign-in'</msg>
+<status status="PASS" starttime="20230504 16:45:15.856" endtime="20230504 16:45:17.737"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:15.856" endtime="20230504 16:45:17.737"/>
+</kw>
+<kw name="Verify Page Loaded" library="SignIn">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:45:17.738" endtime="20230504 16:45:17.959"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:17.737" endtime="20230504 16:45:17.959"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:15.856" endtime="20230504 16:45:17.959"/>
+</kw>
+<kw name="Log In With Invalid Credentials" library="MereApp">
+<arg>${EMAIL}[1]</arg>
+<arg>${PASSWORD}[1]</arg>
+<kw name="Enter Email And Proceed" library="SignIn">
+<arg>${Email}</arg>
+<kw name="Fill &quot;Email&quot; Field" library="SignIn">
+<arg>${Email}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:17.961" level="INFO">Typing text 'invalid@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20230504 16:45:17.960" endtime="20230504 16:45:18.155"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:17.960" endtime="20230504 16:45:18.155"/>
+</kw>
+<kw name="Verify &quot;Proceed&quot; Button Is Enabled" library="SignIn">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${PROCEED_BUTTON}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230504 16:45:18.155" endtime="20230504 16:45:18.181"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:18.155" endtime="20230504 16:45:18.181"/>
+</kw>
+<kw name="Click &quot;Proceed&quot; Button" library="SignIn">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${PROCEED_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:18.182" level="INFO">Clicking button '//button[@type='button' and contains(text(),'Далее')]'.</msg>
+<status status="PASS" starttime="20230504 16:45:18.182" endtime="20230504 16:45:18.256"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:18.181" endtime="20230504 16:45:18.256"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:17.960" endtime="20230504 16:45:18.256"/>
+</kw>
+<kw name="Verify Page Loaded" library="Password">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${PASWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:45:18.257" endtime="20230504 16:45:18.265"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:18.256" endtime="20230504 16:45:18.265"/>
+</kw>
+<kw name="Enter Password And Proceed" library="Password">
+<arg>${Password}</arg>
+<kw name="Verify Page Loaded" library="Password">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${PASWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:45:18.266" endtime="20230504 16:45:18.270"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:18.265" endtime="20230504 16:45:18.271"/>
+</kw>
+<kw name="Fill &quot;Password&quot; Field" library="Password">
+<arg>${Password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PASWORD_FIELD}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:18.272" level="INFO">Typing text 'invalidpassword' into text field 'password'.</msg>
+<status status="PASS" starttime="20230504 16:45:18.271" endtime="20230504 16:45:18.337"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:18.271" endtime="20230504 16:45:18.337"/>
+</kw>
+<kw name="Verify &quot;Submit&quot; Button Is Enabled" library="Password">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230504 16:45:18.338" endtime="20230504 16:45:18.361"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:18.338" endtime="20230504 16:45:18.361"/>
+</kw>
+<kw name="Click &quot;Submit&quot; Button" library="Password">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:18.362" level="INFO">Clicking button '//button[@type='submit' and contains(text(),'Далее')]'.</msg>
+<status status="PASS" starttime="20230504 16:45:18.362" endtime="20230504 16:45:18.405"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:18.361" endtime="20230504 16:45:18.405"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:18.265" endtime="20230504 16:45:18.405"/>
+</kw>
+<kw name="Verify Login Error Message Displayed" library="Password">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${INVALID_CREDENTIALS_MESSAGE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230504 16:45:18.652" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230504 16:45:18.652" level="FAIL">Page should have contained text 'No active account found with the given credentials' but did not.</msg>
+<status status="FAIL" starttime="20230504 16:45:18.405" endtime="20230504 16:45:18.652"/>
+</kw>
+<status status="FAIL" starttime="20230504 16:45:18.405" endtime="20230504 16:45:18.652"/>
+</kw>
+<status status="FAIL" starttime="20230504 16:45:17.959" endtime="20230504 16:45:18.652"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230504 16:45:18.653" endtime="20230504 16:45:18.761"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:18.652" endtime="20230504 16:45:18.762"/>
+</kw>
+<tag>Negative</tag>
+<tag>SignIn</tag>
+<status status="FAIL" starttime="20230504 16:45:14.184" endtime="20230504 16:45:18.762">Page should have contained text 'No active account found with the given credentials' but did not.</status>
+</test>
+<test id="s1-t6" name="Do Not Enter Email" line="49">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230504 16:45:18.764" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230504 16:45:18.764" endtime="20230504 16:45:20.392"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:18.763" endtime="20230504 16:45:20.392"/>
+</kw>
+<kw name="Open Sign In Page" library="MereApp">
+<kw name="Navigate To" library="SignIn">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230504 16:45:20.394" level="INFO">Opening url 'https://builder.mereplatform.com/sign-in'</msg>
+<status status="PASS" starttime="20230504 16:45:20.393" endtime="20230504 16:45:22.050"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:20.393" endtime="20230504 16:45:22.050"/>
+</kw>
+<kw name="Verify Page Loaded" library="SignIn">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:45:22.051" endtime="20230504 16:45:22.271"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:22.050" endtime="20230504 16:45:22.271"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:20.393" endtime="20230504 16:45:22.271"/>
+</kw>
+<kw name="Do Not Enter Email" library="MereApp">
+<kw name="Verify &quot;Proceed&quot; Button Is Disabled" library="SignIn">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<arg>${PROCEED_BUTTON}</arg>
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<status status="PASS" starttime="20230504 16:45:22.272" endtime="20230504 16:45:22.285"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:22.272" endtime="20230504 16:45:22.285"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:22.271" endtime="20230504 16:45:22.285"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230504 16:45:22.286" endtime="20230504 16:45:22.362"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:22.285" endtime="20230504 16:45:22.362"/>
+</kw>
+<tag>Negative</tag>
+<tag>SignIn</tag>
+<status status="PASS" starttime="20230504 16:45:18.762" endtime="20230504 16:45:22.363"/>
+</test>
+<test id="s1-t7" name="Do Not Enter Password" line="54">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230504 16:45:22.364" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230504 16:45:22.364" endtime="20230504 16:45:23.996"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:22.364" endtime="20230504 16:45:23.996"/>
+</kw>
+<kw name="Open Sign In Page" library="MereApp">
+<kw name="Navigate To" library="SignIn">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230504 16:45:23.998" level="INFO">Opening url 'https://builder.mereplatform.com/sign-in'</msg>
+<status status="PASS" starttime="20230504 16:45:23.998" endtime="20230504 16:45:25.641"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:23.997" endtime="20230504 16:45:25.641"/>
+</kw>
+<kw name="Verify Page Loaded" library="SignIn">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:45:25.641" endtime="20230504 16:45:25.859"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:25.641" endtime="20230504 16:45:25.859"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:23.997" endtime="20230504 16:45:25.859"/>
+</kw>
+<kw name="Do Not Enter Password" library="MereApp">
+<arg>${EMAIL}[0]</arg>
+<kw name="Enter Email And Proceed" library="SignIn">
+<arg>${Email}</arg>
+<kw name="Fill &quot;Email&quot; Field" library="SignIn">
+<arg>${Email}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:25.861" level="INFO">Typing text 'greenrabbittest@gmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20230504 16:45:25.860" endtime="20230504 16:45:26.036"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:25.860" endtime="20230504 16:45:26.036"/>
+</kw>
+<kw name="Verify &quot;Proceed&quot; Button Is Enabled" library="SignIn">
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${PROCEED_BUTTON}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20230504 16:45:26.037" endtime="20230504 16:45:26.063"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:26.036" endtime="20230504 16:45:26.063"/>
+</kw>
+<kw name="Click &quot;Proceed&quot; Button" library="SignIn">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${PROCEED_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:26.065" level="INFO">Clicking button '//button[@type='button' and contains(text(),'Далее')]'.</msg>
+<status status="PASS" starttime="20230504 16:45:26.064" endtime="20230504 16:45:26.135"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:26.064" endtime="20230504 16:45:26.136"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:25.860" endtime="20230504 16:45:26.136"/>
+</kw>
+<kw name="Verify Page Loaded" library="Password">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${PASWORD_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:45:26.136" endtime="20230504 16:45:26.144"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:26.136" endtime="20230504 16:45:26.145"/>
+</kw>
+<kw name="Verify &quot;Submit&quot; Button Is Disabled" library="Password">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<status status="PASS" starttime="20230504 16:45:26.145" endtime="20230504 16:45:26.159"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:26.145" endtime="20230504 16:45:26.159"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:25.859" endtime="20230504 16:45:26.159"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230504 16:45:26.160" endtime="20230504 16:45:26.290"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:26.159" endtime="20230504 16:45:26.290"/>
+</kw>
+<tag>Negative</tag>
+<tag>SignIn</tag>
+<status status="PASS" starttime="20230504 16:45:22.363" endtime="20230504 16:45:26.290"/>
+</test>
+<test id="s1-t8" name="Enter Email In Invalid Format" line="59">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230504 16:45:26.292" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20230504 16:45:26.292" endtime="20230504 16:45:27.892"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:26.291" endtime="20230504 16:45:27.893"/>
+</kw>
+<kw name="Open Sign In Page" library="MereApp">
+<kw name="Navigate To" library="SignIn">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${START_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230504 16:45:27.894" level="INFO">Opening url 'https://builder.mereplatform.com/sign-in'</msg>
+<status status="PASS" starttime="20230504 16:45:27.894" endtime="20230504 16:45:29.583"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:27.893" endtime="20230504 16:45:29.584"/>
+</kw>
+<kw name="Verify Page Loaded" library="SignIn">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20230504 16:45:29.584" endtime="20230504 16:45:29.803"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:29.584" endtime="20230504 16:45:29.803"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:27.893" endtime="20230504 16:45:29.803"/>
+</kw>
+<kw name="Email Has Invalid Format" library="MereApp">
+<arg>${EMAIL}[2]</arg>
+<kw name="Fill &quot;Email&quot; Field" library="SignIn">
+<arg>${Email}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:29.804" level="INFO">Typing text 'invalidgmail.com' into text field 'email'.</msg>
+<status status="PASS" starttime="20230504 16:45:29.804" endtime="20230504 16:45:29.966"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:29.804" endtime="20230504 16:45:29.966"/>
+</kw>
+<kw name="Verify Invalid Email Format Message Displayed" library="SignIn">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${INCORRECT_EMAIL_MESSAGE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230504 16:45:29.976" level="INFO">Current page contains text 'Email is incorrect!'.</msg>
+<status status="PASS" starttime="20230504 16:45:29.967" endtime="20230504 16:45:29.976"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:29.966" endtime="20230504 16:45:29.976"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:29.803" endtime="20230504 16:45:29.976"/>
+</kw>
+<kw name="Verify &quot;Proceed&quot; Button Is Disabled" library="SignIn">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<arg>${PROCEED_BUTTON}</arg>
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<status status="PASS" starttime="20230504 16:45:29.977" endtime="20230504 16:45:29.993"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:29.976" endtime="20230504 16:45:29.993"/>
+</kw>
+<kw name="Email Has Invalid Format" library="MereApp">
+<arg>${EMAIL}[3]</arg>
+<kw name="Fill &quot;Email&quot; Field" library="SignIn">
+<arg>${Email}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${EMAIL_FIELD}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230504 16:45:29.994" level="INFO">Typing text 'invalid@gmail' into text field 'email'.</msg>
+<status status="PASS" starttime="20230504 16:45:29.994" endtime="20230504 16:45:30.086"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:29.993" endtime="20230504 16:45:30.086"/>
+</kw>
+<kw name="Verify Invalid Email Format Message Displayed" library="SignIn">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${INCORRECT_EMAIL_MESSAGE}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230504 16:45:30.094" level="INFO">Current page contains text 'Email is incorrect!'.</msg>
+<status status="PASS" starttime="20230504 16:45:30.087" endtime="20230504 16:45:30.094"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:30.087" endtime="20230504 16:45:30.094"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:29.993" endtime="20230504 16:45:30.094"/>
+</kw>
+<kw name="Verify &quot;Proceed&quot; Button Is Disabled" library="SignIn">
+<kw name="Element Should Be Disabled" library="SeleniumLibrary">
+<arg>${PROCEED_BUTTON}</arg>
+<doc>Verifies that element identified by ``locator`` is disabled.</doc>
+<status status="PASS" starttime="20230504 16:45:30.094" endtime="20230504 16:45:30.103"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:30.094" endtime="20230504 16:45:30.103"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230504 16:45:30.104" endtime="20230504 16:45:30.188"/>
+</kw>
+<status status="PASS" starttime="20230504 16:45:30.103" endtime="20230504 16:45:30.188"/>
+</kw>
+<tag>Negative</tag>
+<tag>SignIn</tag>
+<status status="PASS" starttime="20230504 16:45:26.291" endtime="20230504 16:45:30.188"/>
+</test>
+<status status="FAIL" starttime="20230504 16:44:51.112" endtime="20230504 16:45:30.189"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="3" skip="0">Negative</stat>
+<stat pass="4" fail="4" skip="0">SignIn</stat>
+<stat pass="1" fail="1" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat pass="4" fail="4" skip="0" id="s1" name="MereUi">MereUi</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
