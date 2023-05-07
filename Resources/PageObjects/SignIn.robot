@@ -1,11 +1,14 @@
 *** Settings ***
 Library        SeleniumLibrary
+Library        FakerLibrary
+
 Resource    ../PageObjects/Password.robot
 
 *** Variables ***
-${EMAIL_FIELD}                          email
-${PROCEED_BUTTON}                       //button[@type='button' and contains(text(),'Далее')]
-${INCORRECT_EMAIL_MESSAGE}              Email is incorrect!
+${EMAIL_FIELD}                email
+${PROCEED_BUTTON}             //button[@type='button' and contains(text(),'Далее')]
+${INCORRECT_EMAIL_MESSAGE}    Email is incorrect!
+${SIGN_UP_BUTTON}             xpath=//*[@id="root"]/div/div/div[4]/form/div/a
 
 *** Keywords ***
 Navigate To
@@ -35,4 +38,7 @@ Click "Proceed" Button
 
 Verify Invalid Email Format Message Displayed
     Page Should Contain     ${INCORRECT_EMAIL_MESSAGE}
+
+Click "Sign Up" Button
+    Click Element    ${SIGN_UP_BUTTON}
 
