@@ -17,6 +17,7 @@ Log In With Valid Credentials
     SignIn.Enter Email And Proceed    ${Email}
     Password.Verify Page Loaded
     Password.Enter Password And Proceed    ${Password}
+    sleep    2s
     Home.Verify Page Loaded
 
 Log In With Invalid Credentials
@@ -51,12 +52,13 @@ Create New Account
     #проверять, что страница загружена по другому идентификатору
     #SignIn.Verify Page Loaded
 #
-#Follow "Create New Account" Link And Sign In With Existing Credentials
-#    [Arguments]    ${Email}     ${Password}
-#    SignIn.Click "Sign Up" Button
-#    CreateAccount.Verify Page Loaded
-#    CreateAccount.Click "Submit" Button
-#    SignIn.Enter Email And Proceed    ${Email}
-#    Password.Verify Page Loaded
-#    Password.Enter Password And Proceed    ${Password}
-#    Home.Verify Page Loaded
+Follow "Create New Account" Link And Sign In With Existing Credentials
+    [Arguments]    ${Email}     ${Password}
+    SignIn.Click "Sign Up" Button
+    CreateAccount.Verify Page Loaded
+    CreateAccount.Click "Sign In" Button
+    SignIn.Enter Email And Proceed    ${Email}
+    Password.Verify Page Loaded
+    Password.Enter Password And Proceed    ${Password}
+    sleep    2s
+    Home.Verify Page Loaded

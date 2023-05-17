@@ -10,7 +10,7 @@ ${NEW_USER_PASSWORD_FIELD}              password
 ${NEW_USER_CONFIRM_PASSWORD_FIELD}      confirm
 ${INCORRECT_EMAIL_MESSAGE}    Email is incorrect!
 ${SIGN_UP_BUTTON}             xpath=//*[@id="root"]/div/div/div[4]/form/div/a
-${SIGN_IN_BUTTON}             xpath=//*[@href='/sign-in']
+${SIGN_IN_BUTTON}             xpath=//*[@id="root"]/div/div/div[1]/form/div[5]/a
 ${SUBMIT_BUTTON}              xpath=//button[@type='submit' and contains(text(),'Далее')]
 
 *** Keywords ***
@@ -36,7 +36,7 @@ Fill "Confirm" Field
     Element Should Be Enabled   ${SUBMIT_BUTTON}
 
 Click "Sign In" Button
-    Click Button    ${SIGN_IN_BUTTON}
+    Click Element    ${SIGN_IN_BUTTON}
 
 Click "Submit" Button
     Click Button    ${SUBMIT_BUTTON}
