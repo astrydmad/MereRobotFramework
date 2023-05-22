@@ -9,6 +9,7 @@ ${EMAIL_FIELD}                email
 ${PROCEED_BUTTON}             //button[@type='button' and contains(text(),'Далее')]
 ${INCORRECT_EMAIL_MESSAGE}    Email is incorrect!
 ${SIGN_UP_BUTTON}             xpath=//*[@id="root"]/div/div/div[4]/form/div/a
+${GOOGLE_BUTTON}              xpath=//*[@id="root"]/div/div/div[2]/div/div/div/div/div[2]/span[1]
 
 *** Keywords ***
 Navigate To
@@ -41,4 +42,7 @@ Verify Invalid Email Format Message Displayed
 
 Click "Sign Up" Button
     Click Element    ${SIGN_UP_BUTTON}
+
+Click "Contunue With Google" button
+    Click Element       ${GOOGLE_BUTTON}
 

@@ -4,6 +4,7 @@ Resource    ../Resources/PageObjects/SignIn.robot
 Resource    ../Resources/PageObjects/Password.robot
 Resource    ../Resources/PageObjects/Home.robot
 Resource    ../Resources/PageObjects/CreateAccount.robot
+Resource    ../Resources/PageObjects/GoogleAuth.robot
 
 *** Variables ***
 
@@ -38,7 +39,7 @@ Do Not Enter Password
 
 Email Has Invalid Format
     [Arguments]    ${Email}
-    Fill "Email" Field    ${Email}
+    SignIn.Fill "Email" Field   ${Email}
     SignIn.Verify Invalid Email Format Message Displayed
 
 Create New Account
@@ -62,3 +63,9 @@ Follow "Create New Account" Link And Sign In With Existing Credentials
     Password.Enter Password And Proceed    ${Password}
     sleep    2s
     Home.Verify Page Loaded
+
+Sign In With Google
+#    [Arguments]    ${Email}     ${Password}
+    SignIn.Click "Contunue With Google" button
+    GoogleAuth.Switch To Google Auth Tab
+    sleep    3s
